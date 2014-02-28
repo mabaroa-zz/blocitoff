@@ -41,6 +41,10 @@ group :doc do
 end
 
 gem 'devise'
+
+gem 'whenever', :require => false
+
+
 # ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
