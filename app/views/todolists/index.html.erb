@@ -1,0 +1,44 @@
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+  <h1>My to-do list</h1>
+<table class="table">
+<thead>
+    <tr>
+      <th> Description </th>
+      <th> Days Created </th>
+      <th> Check if completed  </th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   
+  <% @todolists.each  do |todolist| %>
+  <%= tag :tr, id: "todolist-#{todolist.id}" %>
+  <td><%= todolist.description %></td>
+  <td><%=  "#{time_ago_in_words(todolist.created_at)} ago"%> </td> 
+   
+  <td> 
+    
+      
+    <%= link_to 'Delete to-do item', todolist, method: :delete, remote: true, class: 'btn-sm btn-danger' %> 
+          
+      </div>
+    </div> 
+  </td>
+
+  <td><%= link_to 'Show', todolist %></td>
+  <td><%= link_to 'Edit', edit_todolist_path(todolist) %></td> 
+    </div>
+      
+  <% end %> 
+  </table>
+</div>
+</div>
+<br>
+
+<%= link_to 'New To-do item', new_todolist_path %>
+
+
